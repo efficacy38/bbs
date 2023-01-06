@@ -123,7 +123,7 @@ def main(argv=None):
         config_files.append(conf_file)
 
     if not config_files:
-        print "No valid configuration files found, quitting..."
+        print("No valid configuration files found, quitting...")
         return 2
 
     # Initializa PJSUA

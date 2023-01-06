@@ -143,7 +143,7 @@ class Scenario(object):
         self.mutex.acquire()
         settings = Settings()
         if settings.verbose:
-            print msg
+            print(msg)
         self.messages.append(colored.clean(msg))
         self.mutex.release()
 
@@ -195,10 +195,10 @@ class Scenario(object):
             else:
                 self.log(colored.red("Scenario has failed"))
         except KeyboardInterrupt:
-            print "\nInterrupt key pressed, quitting..."
+            print("\nInterrupt key pressed, quitting...")
             sys.exit(1)
         except:
-            print self.log(colored.red("Scenario has failed"))
+            print(self.log(colored.red("Scenario has failed")))
 
 
 class ScenarioManager(list):

@@ -78,9 +78,9 @@ class PJLib(object):
 
             self.lib.set_null_snd_dev()
             self.lib.start()
-        except pjsua.Error, e:
+        except pjsua.Error as e:
             self.lib.destroy()
-            print "Exception: " + str(e)
+            print("Exception: " + str(e))
 
     def deinit(self):
         """Deinitialization of global pjsip library.
@@ -92,7 +92,8 @@ class PJLib(object):
 
     def pjlog_cb(self, level, str, len):
         """Generic Log callbac for PJSUA library"""
-        print str,
+        # original is `print str,`
+        print(str)
 
     def get_default_account(self, transport=None):
         if transport == 'tcp':

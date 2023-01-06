@@ -87,8 +87,8 @@ class Session(object):
             if step.success == True:
                 steps_ok += 1
             else:
-                print step.__class__.__name__
-                print step.success
+                print(step.__class__.__name__)
+                print(step.success)
 
         return steps_ok == len(self.steps)
 

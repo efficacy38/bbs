@@ -41,16 +41,16 @@ class ConfigFile(object):
             try:
                 yaml_stream += open(env_file, 'r').read()
             except (OSError, IOError) as ex:
-                print "Error opening %s: %s" % (env_file, ex)
+                print("Error opening %s: %s" % (env_file, ex))
 
         # Open configuration file
         try:
             yaml_stream += open(self.filename, 'r').read()
         except (OSError, IOError) as ex:
-            print "Error opening %s: %s" % (self.filename, ex)
+            print("Error opening %s: %s" % (self.filename, ex))
 
         # Try to parse concatenated configuration files
         try:
             return yaml.load(yaml_stream)
         except yaml.YAMLError as ex:
-            print "Error parsing configuration yaml: ", ex
+            print("Error parsing configuration yaml: ", ex)
